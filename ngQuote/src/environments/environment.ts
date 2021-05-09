@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 
   apiUrls: {
-    quote: 'http://localhost/api', // Put here your QUOTE API BASE URL. E.g.: api or https://localhost/api
+    quote: 'https://localhost/api', // Put here your QUOTE API BASE URL. E.g.: api or https://localhost/api
     share: '', // Put here your SHARE API BASE URL. E.g.: api or https://share.com/api
   },
 };

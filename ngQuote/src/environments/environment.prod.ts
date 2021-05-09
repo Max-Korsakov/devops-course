@@ -2,7 +2,7 @@ export const environment = {
   production: true,
 
   apiUrls: {
-    quote: 'http://localhost/api',
+    quote: 'https://localhost/api',
     share: '',
   },
 };
