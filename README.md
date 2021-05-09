@@ -10,7 +10,7 @@ Navigate to server folder `cd server` then run `npm run start`. Server will run 
 
 Run `cd ngQuote` then `npm run build`. 
 Navigate to root folder and run  `docker build -t devops .` 
-Run  `docker run --name devops -p 80:80 -d devops` to launch application
+Run  `docker run --name devops -p 80:80 -p 443:443 -d devops` to launch application
 
 Navigate to `https://localhost`.
 
