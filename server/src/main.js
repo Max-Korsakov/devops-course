@@ -1,9 +1,10 @@
-import http from 'http';
+import https from 'https';
 import application from './app';
 import dotenv from 'dotenv';
 import path from 'path'
+import fs from 'fs'
 
-dotenv.config({ path: path.join(__dirname , '../.env') })
+dotenv.config({ path: path.join(__dirname, '../.env') })
 
 process
     .on('unhandledRejection', (error, p) => {
@@ -14,11 +15,16 @@ process
         process.exit(1);
     });
 
+const options = {
+    key: fs.readFileSync(path.join(__dirname, '../../keys/localhost.key')),
+    cert: fs.readFileSync(path.join(__dirname, '../../keys/localhost.crt'))
+};
+
 const app = application();
 const port = normalizePort(process.env.APP_PORT || '8080');
 app.set('port', port);
 
-const server = http.createServer(app);
+const server = https.createServer(options, app);
 
 server.listen(port);
 server.on('error', onError);
